@@ -1,11 +1,12 @@
 import { defineConfig } from "tinacms";
 
+
 export const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   token: process.env.TINA_TOKEN,
-  branch: "main",
+  branch: process.env.GITHUB_BRANCH,
   // Relative to the _root_ of your repo
-  localContentPath: "../../demo-content-repo",
+  localContentPath: "../../tina-test",
   build: {
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
